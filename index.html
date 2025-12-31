@@ -30,7 +30,7 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(10,5,15,.85);
+    background:rgba(10,5,15,.55);
     backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(255,255,255,.06);
     z-index:1000;
@@ -40,28 +40,22 @@ body{
     color:#ff6fb3;
     position:relative;
     z-index:5;
-    font-size:1.2rem;
 }
 
 .nav-menu{
     position:relative;
     z-index:5;
-    display:flex;
-    gap:20px;
 }
 
 .nav-menu a{
     color:#fff;
     text-decoration:none;
+    margin-left:26px;
     font-size:.9rem;
     opacity:.9;
-    transition:.3s;
 }
 
-.nav-menu a:hover{
-    color:#ff6fb3;
-    opacity:1;
-}
+.nav-menu a:hover{color:#ff6fb3}
 
 /* shimmer (TIDAK NANGKAP KLIK) */
 .nav-shimmer{
@@ -112,51 +106,29 @@ body{
 
 /* ================= HERO ================= */
 .hero{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:100px 20px 60px;
+    padding-top:80px;
 }
 
-.hero h1{
-    font-size:clamp(2rem, 6vw, 3rem);
-    margin-bottom:10px;
-}
-
-.hero h2{
-    color:#ff6fb3;
-    margin:10px 0;
-    font-size:clamp(1.3rem, 4vw, 1.8rem);
-}
-
-.hero p{
-    color:#ccc;
-    margin-bottom:30px;
-    font-size:clamp(0.9rem, 2.5vw, 1rem);
-}
+.hero h1{font-size:3rem}
+.hero h2{color:#ff6fb3;margin:10px 0}
+.hero p{color:#ccc;margin-bottom:30px}
 
 .hero a{
-    display:inline-block;
     padding:12px 35px;
     background:linear-gradient(45deg,#ff4f9a,#ff77b7);
     border-radius:30px;
     text-decoration:none;
     color:#fff;
     font-weight:bold;
-    transition:.3s;
-}
-
-.hero a:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 30px rgba(255,79,154,.4);
 }
 
 /* ================= SECTION ================= */
-section{
-    padding:80px 10%;
-}
+section{padding:100px 10%}
 
 .section-title{
     text-align:center;
@@ -165,21 +137,16 @@ section{
 
 .section-title h2{
     color:#ff6fb3;
-    font-size:clamp(1.8rem, 5vw, 2.4rem);
-    margin-bottom:10px;
+    font-size:2.4rem;
 }
 
-.section-title p{
-    color:#bbb;
-    font-size:clamp(0.9rem, 2.5vw, 1rem);
-}
+.section-title p{color:#bbb}
 
 /* ================= PLAYLIST ================= */
 .playlist{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:30px;
-    margin-bottom:30px;
 }
 
 .song-card{
@@ -187,12 +154,6 @@ section{
     padding:20px;
     border-radius:20px;
     text-align:center;
-    transition:.3s;
-}
-
-.song-card:hover{
-    background:rgba(255,255,255,.08);
-    transform:translateY(-5px);
 }
 
 .cover{
@@ -209,38 +170,14 @@ section{
 .purple{background:linear-gradient(135deg,#8a5cff,#c77dff)}
 .red{background:linear-gradient(135deg,#ff4b4b,#ff7a7a)}
 
-.song-card h3{
-    font-size:clamp(1rem, 3vw, 1.2rem);
-    margin-bottom:10px;
-}
-
 .play-btn{
     margin-top:12px;
-    padding:10px 24px;
+    padding:8px 20px;
     border:none;
     border-radius:20px;
     background:linear-gradient(45deg,#ff4f9a,#ff77b7);
     color:#fff;
     cursor:pointer;
-    font-weight:600;
-    font-size:.9rem;
-    transition:.3s;
-}
-
-.play-btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 5px 15px rgba(255,79,154,.4);
-}
-
-.audio-container{
-    text-align:center;
-    margin-top:30px;
-}
-
-#audioPlayer{
-    width:100%;
-    max-width:380px;
-    border-radius:10px;
 }
 
 /* ================= STORY ================= */
@@ -252,7 +189,7 @@ section{
     margin-bottom:80px;
     opacity:0;
     transform:translateY(40px);
-    transition:opacity 1s, transform 1s;
+    transition:1s;
 }
 
 .story-box.show{
@@ -266,21 +203,8 @@ section{
     border-radius:20px;
 }
 
-.story-text small{
-    color:#ff6fb3;
-    font-size:0.85rem;
-}
-
-.story-text h3{
-    margin:12px 0 15px;
-    font-size:clamp(1.2rem, 3.5vw, 1.5rem);
-}
-
-.story-text p{
-    color:#ccc;
-    line-height:1.7;
-    font-size:clamp(0.9rem, 2.5vw, 1rem);
-}
+.story-text small{color:#ff6fb3}
+.story-text p{color:#ccc;line-height:1.6}
 
 .story-img{
     background:rgba(255,255,255,.05);
@@ -292,121 +216,17 @@ section{
     width:100%;
     height:320px;
     object-fit:cover;
-    display:block;
 }
 
 .caption{
-    padding:15px;
-    font-size:clamp(0.85rem, 2vw, 0.9rem);
+    padding:10px;
+    font-size:.9rem;
     color:#ccc;
     text-align:center;
-    line-height:1.5;
 }
 
-/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-    .romantic-nav{
-        padding:0 5%;
-        height:60px;
-    }
-    
-    .romantic-nav h3{
-        font-size:1rem;
-    }
-    
-    .nav-menu{
-        gap:15px;
-    }
-    
-    .nav-menu a{
-        font-size:0.85rem;
-    }
-    
-    section{
-        padding:60px 5%;
-    }
-    
-    .hero{
-        padding:80px 20px 40px;
-    }
-    
-    .playlist{
-        grid-template-columns:1fr;
-        gap:20px;
-    }
-    
-    .story-box{
-        grid-template-columns:1fr;
-        gap:25px;
-        margin-bottom:50px;
-    }
-    
-    .story-text{
-        padding:25px;
-    }
-    
-    .story-img img{
-        height:250px;
-    }
-    
-    .cover{
-        height:130px;
-        font-size:2rem;
-    }
-}
-
-@media(max-width:480px){
-    .romantic-nav{
-        padding:0 4%;
-        height:55px;
-    }
-    
-    .romantic-nav h3{
-        font-size:0.9rem;
-    }
-    
-    .nav-menu{
-        gap:10px;
-    }
-    
-    .nav-menu a{
-        font-size:0.8rem;
-    }
-    
-    section{
-        padding:50px 4%;
-    }
-    
-    .hero{
-        padding:70px 15px 30px;
-    }
-    
-    .hero a{
-        padding:10px 28px;
-        font-size:0.9rem;
-    }
-    
-    .story-text{
-        padding:20px;
-    }
-    
-    .story-img img{
-        height:220px;
-    }
-    
-    .cover{
-        height:120px;
-        font-size:1.8rem;
-    }
-    
-    .play-btn{
-        padding:8px 20px;
-        font-size:0.85rem;
-    }
-    
-    #audioPlayer{
-        max-width:100%;
-    }
+    .story-box{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -431,8 +251,8 @@ section{
         <h1>Website Kenangan</h1>
         <h2>Untuk Kamu 🤍</h2>
         <p>Setiap scroll adalah cerita tentang kita</p>
-        <a href="#cerita">Mulai Cerita</a>
-    </div>
+        <a href="javascript:void(0)" onclick="scrollToCerita()">Mulai Cerita</a>
+
 </section>
 
 <!-- LAGU -->
@@ -446,24 +266,24 @@ section{
         <div class="song-card">
             <div class="cover pink">❤️</div>
             <h3>Semenjak Ada Dirimu</h3>
-            <button class="play-btn" onclick="playSong('/assets/lagu1.mpeg')">Play</button>
+            <button class="play-btn" onclick="playSong('assets/lagu1.mpeg')">Play</button>
         </div>
 
         <div class="song-card">
             <div class="cover purple">❤️</div>
             <h3>A Thousand Years</h3>
-            <button class="play-btn" onclick="playSong('/assets/lagu2.mpeg')">Play</button>
+            <button class="play-btn" onclick="playSong('assets/lagu2.mpeg')">Play</button>
         </div>
 
         <div class="song-card">
             <div class="cover red">❤️</div>
             <h3>Mata Ke Hati</h3>
-            <button class="play-btn" onclick="playSong('/assets/lagu3.mpeg')">Play</button>
+            <button class="play-btn" onclick="playSong('assets/lagu3.mpeg')">Play</button>
         </div>
     </div>
 
-    <div class="audio-container">
-        <audio id="audioPlayer" controls></audio>
+    <div style="text-align:center;margin-top:30px">
+        <audio id="audioPlayer" controls style="width:100%;max-width:380px"></audio>
     </div>
 </section>
 
@@ -475,64 +295,113 @@ section{
     </div>
 
     <div class="story-box">
-        <div class="story-text">
+         <div class="story-text">
             <small>Kenangan #1</small>
-            <h3>Pertemuan 1 | 2025 🌙</h3>
+            <h3>Pertemuan 1|2025🌙</h3>
             <p>Dari semua hari di 2025, hari ini adalah hari pertemuan pertama kita.</p>
         </div>
         <div class="story-img">
-            <img src="/assets/pertemuanke3.jpeg" alt="Pertemuan 1">
+            <img src="assets/pertemuanke3.jpeg">
             <div class="caption">2025 jadi saksi, pertemuan sederhana ini mengubah cara hatiku memandang waktu.</div>
         </div>
     </div>
 
     <div class="story-box">
-        <div class="story-img">
-            <img src="/assets/pertemuanke5.jpeg" alt="Pertemuan 2">
-            <div class="caption">Masih di tahun yang sama, aku mulai menyimpan senyummu sebagai kenangan.</div>
-        </div>
         <div class="story-text">
             <small>Kenangan #2</small>
-            <h3>Pertemuan 2 | 2025 ☕</h3>
+            <h3>Pertemuan 2| 2025 ☕</h3>
             <p>Perlahan terasa hangat sejak aku mengenal senyummu.</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke5.jpeg">
+            <div class="caption">Masih di tahun yang sama, aku mulai menyimpan senyummu sebagai kenangan.</div>
         </div>
     </div>
 
     <div class="story-box">
         <div class="story-text">
             <small>Kenangan #3</small>
-            <h3>Pertemuan 3 | 2025 ☕</h3>
+            <h3>Pertemuan 3| 2025 ☕</h3>
             <p>Ditahun ini, rasa nyaman tumbuh tanpa perlu alasan.</p>
         </div>
         <div class="story-img">
-            <img src="/assets/pertemuanke1.jpeg" alt="Pertemuan 3">
+            <img src="assets/pertemuanke2.jpeg">
             <div class="caption">2025 perlahan terasa berbeda, karena hadirmu mulai berarti.</div>
         </div>
     </div>
 
     <div class="story-box">
-        <div class="story-img">
-            <img src="/assets/pertemuanke2.jpeg" alt="Pertemuan 4">
-            <div class="caption">Di antara hari-hari 2025, kebersamaan ini jadi bagian yang ingin kuingat.</div>
-        </div>
         <div class="story-text">
             <small>Kenangan #4</small>
-            <h3>Pertemuan 4 | 2025 ☕</h3>
+            <h3>Pertemuan 4| 2025 ☕</h3>
             <p>2025 mencatat awal tawa kita sebagai kenangan yang berharga.</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke1.jpeg">
+            <div class="caption">Di antara hari-hari 2025, kebersamaan ini jadi bagian yang ingin kuingat.</div>
         </div>
     </div>
 
     <div class="story-box">
         <div class="story-text">
             <small>Kenangan #5</small>
-            <h3>Pertemuan 5 | 2025 🌸</h3>
-            <p>Setiap pertemuan di 2025 selalu ingin ku ulang kembali.</p>
+            <h3>Pertemuan 5| 2025 🌸</h3>
+            <p>setiap pertemuan di 2025 selalu ingin ku ulang kembali.</p>
         </div>
         <div class="story-img">
-            <img src="/assets/pertemuanke6.jpeg" alt="Pertemuan 5">
+            <img src="assets/pertemuanke4.jpeg">
             <div class="caption">Tahun ini mengajarkanku, bahwa kenangan terindah lahir dari kebersamaan sederhana</div>
         </div>
     </div>
+
+<div class="story-box">
+        <div class="story-text">
+            <small>Kenangan #6</small>
+            <h3>Pertemuan 6| 2025 🌸</h3>
+            <p>Berawal dari sapaan. Ternyata jadi cerita yang panjang.</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke7.jpeg">
+            <div class="caption">Tahun ini mengajarkanku satu hal: bahagia itu sederhana, asal bersamamu</div>
+        </div>
+    </div>
+
+<div class="story-box">
+        <div class="story-text">
+            <small>Kenangan #7</small>
+            <h3>Pertemuan 7| 2025 🌸</h3>
+            <p>Mulai sering bersama. Dari obrolan sederhana, tumbuh rasa yang nggak bisa dijelaskan.</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke8.jpeg">
+            <div class="caption">perjalanan ini mungkin biasa bagi orang lain, tapi bersamamu semuanya jadi terasa istimewa</div>
+        </div>
+    </div>
+
+    <div class="story-box">
+        <div class="story-text">
+            <small>Kenangan #8</small>
+            <h3>Pertemuan 8| 2025 🌸</h3>
+            <p>Masih berjalan sampai sekarang. Bukan tentang cepat, tapi tentang tetap memilih</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke9.jpeg">
+            <div class="caption">Kalau nanti lelah,ingat ya.. kita pernah sejauh ini bersama</div>
+        </div>
+    </div>
+
+    <div class="story-box">
+        <div class="story-text">
+            <small>Kenangan #9</small>
+            <h3>Pertemuan 9| 2025 🌸</h3>
+            <p>Belajar saling mengerti. Pelan-pelan, kita belajar bertahan dan memahami satu sama lain.</p>
+        </div>
+        <div class="story-img">
+            <img src="assets/pertemuanke6.jpeg">
+            <div class="caption">Terimakasih sudah hadir di tahun ini, menemani hari-hari yang kadang melelahkan</div>
+        </div>
+    </div>
+
 </section>
 
 <script>
@@ -560,15 +429,21 @@ setInterval(()=>{
 
 /* scroll reveal */
 const boxes=document.querySelectorAll('.story-box');
-function checkScroll(){
+window.addEventListener('scroll',()=>{
     boxes.forEach(b=>{
         if(b.getBoundingClientRect().top < window.innerHeight - 100){
             b.classList.add('show');
         }
     });
+});
+
+function scrollToCerita(){
+    const target = document.getElementById("cerita");
+    target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
-window.addEventListener('scroll', checkScroll);
-checkScroll(); // initial check
 </script>
 
 </body>
