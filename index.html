@@ -244,9 +244,93 @@ section{padding:100px 10%}
 }
 
 
-@media(max-width:768px){
-    .story-box{grid-template-columns:1fr}
+@media (max-width: 768px){
+
+    /* NAVBAR */
+    .romantic-nav{
+        padding:0 5%;
+        height:60px;
+    }
+
+    .romantic-nav h3{
+        font-size:1rem;
+    }
+
+    .nav-menu a{
+        margin-left:14px;
+        font-size:.8rem;
+    }
+
+    /* HERO */
+    .hero{
+        padding-top:60px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero h2{
+        font-size:1.2rem;
+    }
+
+    .hero p{
+        font-size:.9rem;
+        margin-bottom:20px;
+    }
+
+    .cinematic-btn{
+        padding:12px 28px;
+        font-size:.9rem;
+    }
+
+    /* SECTION */
+    section{
+        padding:70px 6%;
+    }
+
+    .section-title h2{
+        font-size:1.8rem;
+    }
+
+    .section-title p{
+        font-size:.9rem;
+    }
+
+    /* PLAYLIST */
+    .cover{
+        height:120px;
+        font-size:2rem;
+    }
+
+    /* STORY */
+    .story-box{
+        grid-template-columns:1fr;
+        gap:20px;
+        margin-bottom:60px;
+    }
+
+    .story-text{
+        padding:20px;
+    }
+
+    .story-text h3{
+        font-size:1.1rem;
+    }
+
+    .story-text p{
+        font-size:.9rem;
+    }
+
+    .story-img img{
+        height:220px;
+    }
+
+    .caption{
+        font-size:.8rem;
+    }
 }
+
 </style>
 </head>
 
@@ -489,23 +573,20 @@ function stopAutoScroll(){
 }
 
 // klik tombol
+
 document.getElementById("btnMulai").addEventListener("click", ()=>{
-    startAutoScroll(0.35); // makin kecil = makin pelan
+    const isMobile = window.innerWidth <= 768;
+    startAutoScroll(isMobile ? 0.25 : 0.35);
 });
+
 
 // hentikan kalau user interaksi
 ["wheel","touchstart","keydown"].forEach(evt=>{
     window.addEventListener(evt, stopAutoScroll, { passive:true });
 });
 
-
-/* EVENT BUTTON */
-document.getElementById("btnMulai").addEventListener("click", function(e){
-    e.preventDefault();
-    cinematicScrollToBottom(5200);
-});
-
 </script>
 
 </body>
 </html>
+
