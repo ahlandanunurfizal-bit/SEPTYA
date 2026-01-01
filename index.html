@@ -574,13 +574,25 @@ function stopAutoScroll(){
 
 // klik tombol
 
+<script>
 document.getElementById("btnMulai").addEventListener("click", ()=>{
+
     const isMobile = window.innerWidth <= 768;
-    startAutoScroll(isMobile ? 0.25 : 0.35);
+    const offset = isMobile ? 60 : 80;
+
+    // 1️⃣ JUMP CEPAT KE AWAL CERITA
+    window.scrollTo({
+        top: document.getElementById("cerita").offsetTop - offset,
+        behavior: "smooth"
+    });
+
+    // 2️⃣ LANJUT AUTO SCROLL PELAN
+    setTimeout(()=>{
+        startAutoScroll(isMobile ? 0.25 : 0.35);
+    }, 450); // tunggu jump selesai
 });
+</script>
 
-
-// hentikan kalau user interaksi
 ["wheel","touchstart","keydown"].forEach(evt=>{
     window.addEventListener(evt, stopAutoScroll, { passive:true });
 });
@@ -589,5 +601,6 @@ document.getElementById("btnMulai").addEventListener("click", ()=>{
 
 </body>
 </html>
+
 
 
