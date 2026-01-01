@@ -573,8 +573,6 @@ function stopAutoScroll(){
 }
 
 // klik tombol
-
-<script>
 document.getElementById("btnMulai").addEventListener("click", ()=>{
 
     const isMobile = window.innerWidth <= 768;
@@ -591,7 +589,6 @@ document.getElementById("btnMulai").addEventListener("click", ()=>{
         startAutoScroll(isMobile ? 0.25 : 0.35);
     }, 450); // tunggu jump selesai
 });
-</script>
 
 ["wheel","touchstart","keydown"].forEach(evt=>{
     window.addEventListener(evt, stopAutoScroll, { passive:true });
@@ -601,6 +598,7 @@ document.getElementById("btnMulai").addEventListener("click", ()=>{
 
 </body>
 </html>
+
 
 
 
